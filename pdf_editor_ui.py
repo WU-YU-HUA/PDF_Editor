@@ -110,10 +110,10 @@ class Ui_MainWindow(object):
         selected_text = self.comboBox.currentText()
         if selected_text == "固定頁數裁切":
             page = int(self.lineEdit.text())
-            fixed_split_pdf(self.path, f"{self.path.split("/")[-1]}", page)
+            fixed_split_pdf(self.path, f"{self.path.split("/")[-1].split(".")[0]}", page)
         if selected_text == "範圍裁切":
             ranged = self.lineEdit.text().split("-")
-            ranged_split_pdf(self.path, f"{self.path.split("/")[-1]}", int(ranged[0]), int(ranged[1]))
+            ranged_split_pdf(self.path, f"{self.path.split("/")[-1].split(".")[0]}", int(ranged[0]), int(ranged[1]))
 
 if __name__ == "__main__":
     import sys
